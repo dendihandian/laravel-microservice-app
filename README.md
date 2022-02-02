@@ -1,3 +1,23 @@
+# Laravel Microservice App
+
+## Image Build
+
+```
+docker build -t laravel-microservice-app:latest . 
+```
+## Container Build
+
+Interactive:
+```
+docker run -it -p 80:80 laravel-microservice:latest
+```
+
+Daemon/Background:
+```
+docker run -d -p 80:80 laravel-microservice:latest
+```
+___________________________________
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
 
 <p align="center">
