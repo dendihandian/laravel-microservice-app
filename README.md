@@ -9,12 +9,12 @@ docker build -t laravel-microservice-app:latest .
 
 Interactive:
 ```
-docker run -it -p 80:80 laravel-microservice:latest
+docker run -it -p 80:80 laravel-microservice-app:latest
 ```
 
 Daemon/Background:
 ```
-docker run -d -p 80:80 laravel-microservice:latest
+docker run -d -p 80:80 laravel-microservice-app:latest
 ```
 ___________________________________
 
