@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return response([
+        'message' => 'Welcome to Laravel Microservice Demo',
+        'env' => env('APP_ENV'),
+    ]);
 });
