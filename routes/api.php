@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\V1\AuthController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 Route::get('/', function () {
     return response(['message' => 'Welcome to Laravel Microservice Demo']);
+});
+
+Route::prefix('v1')->group(function(){
+    Route::prefix('auth')->group(function(){
+        Route::post('register', [AuthController::class, 'register']);
+        Route::post('login', [AuthController::class, 'login']);
+
+        Route::middleware('auth:sanctum')->group(function(){
+            Route::get('user', [AuthController::class, 'user']);
+
+            Route::prefix('token')->group(function(){
+                Route::post('refresh', [AuthController::class, 'refreshToken']);
+                Route::post('revoke', [AuthController::class, 'revokeToken']);
+            });
+        });
+    });
 });
